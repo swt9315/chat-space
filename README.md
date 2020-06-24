@@ -16,12 +16,13 @@ Things you may want to cover:
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
+|name|string|null: false|
 |email|string|null: false|
 |password|string|null: false|
-|username|string|null: false|
 ### Association
 - has_many :group, through: :groups_users
 - has_many :chats
+- has_many :groups_users
 
 ## groups_usersテーブル
 |Column|Type|Options|
@@ -29,30 +30,28 @@ Things you may want to cover:
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :groups
-- belongs_to :users
+- belong_to :groups
+- belong_to :users
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_name|text|null: false|
-|member|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|name|string|null: false|
 ### Association
-- belongs_to :user
 - has_many :users, through:groups_users
 - has_many :chats
+- has_many :groups_users
 
 ## chatsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
+|text|text||
 |image|string||
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :users
-- belongs_to :groups
+- belong_to :users
+- belong_to :groups
 
 * Database initialization
 
