@@ -20,7 +20,7 @@ Things you may want to cover:
 |email|string|null: false|
 |password|string|null: false|
 ### Association
-- has_many :group, through: :groups_users
+- has_many :groups, through: :groups_users
 - has_many :chats
 - has_many :groups_users
 
@@ -30,8 +30,8 @@ Things you may want to cover:
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 ### Association
-- belong_to :groups
-- belong_to :users
+- belong_to :group
+- belong_to :user
 
 ## groupsテーブル
 |Column|Type|Options|
@@ -50,8 +50,8 @@ Things you may want to cover:
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 ### Association
-- belong_to :users
-- belong_to :groups
+- belong_to :user
+- belong_to :group
 
 * Database initialization
 
