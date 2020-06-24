@@ -12,16 +12,47 @@ Things you may want to cover:
 * Configuration
 
 * Database creation
-## groups_usersテーブル
+# Chat-Space DB設計
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|email|string|null: false|
+|password|string|null: false|
+|username|string|null: false|
+### Association
+- has_many :group_users
+- has_many :chats
 
+## groups_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
-
 ### Association
-- belongs_to :group
+- belongs_to :groups
+- belongs_to :users
+
+## groupsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|group_name|text|null: false|
+|member|string|null: false|
+|user_id|integer|null: false, foreign_key: true|
+### Association
 - belongs_to :user
+- has_many :groups_users
+- has_many :chats
+
+## chatsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null: false|
+|image|string||
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :users
+- belongs_to :groups
 
 * Database initialization
 
