@@ -2,11 +2,11 @@
   .Side_bar__user_name
     .top_items
       .top_items__name
-        = current_user.name
+        さわつ きみひこ
       .top_items__icon
         =link_to "#", class: "edit-btn" do
           = icon('fas', 'edit')
-        =link_to edit_user_path(current_user) do
+        =link_to "#", class: "cog-btn" do
           = icon('fas', 'cog')
   .Side_bar__group_list
     .top_message
