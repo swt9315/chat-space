@@ -1,152 +1,163 @@
-.Side_bar {
-  width: 300px; 
+.wrapper {
+  width: 100vw;
   height: 100vh;
-  background-color: #253141;
-  float: left;
-  &__user_name {
+
+  .Side_bar {
+    width: 300px; 
+    height: 100vh;
     background-color: #253141;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    .top_items {
-      width: 260px;
-      height: 20px;
-      color: #ffffff ;
-      font-weight: bold;
-      margin: 0 20px;
+    float: left;
+    .LeftHeader {
+      background-color: #253141;
+      height: 100px;
       display: flex;
-      justify-content: space-between;
-      &__name {
-        font-size: 16px;
-      }
-      &__icon {
-        width: 60px;
-        text-align: right;
-          a {
-            color: #ffffff;
-            text-decoration: none;
-          }
-      }
-    }
-  }
-  &__group_list {
-    background-color: #2f3e51;
-    height: calc(100vh - 100px);
-    color: #ffffff;
-    font-weight: bold;
-    .top_message {
-      padding: 20px 20px 40px 20px;
-      &__group {
-        font-size: 15px;
-        margin-bottom: 5px;
-      }
-      &__text {
-        font-size: 11px;
-      }
-      a {
-        color: #ffffff;
-      }
-    }
-  }
-}
-
-.Main_chat {
-  width: calc(100vw - 300px);
-  height: 100vh;
-  background-color: #ffffff;
-  float: right;
-  &__group_info {
-
-    border-bottom: #eeeeee;
-    padding: 35px 40px 0 40px;
-    display: flex;
-    justify-content: space-between;
-    .top_group {
-      &__name {
-        color: #333333;
-        font-size: 20px;
-        padding-bottom: 15px;
-      }
-      &__member {
-        color: #999999;
-        font-size: 12px;
-      }
-    }
-    a {
-      width: 72px;
-      color: #38aef0;
-      font-size: 16px;
-      text-decoration: none;
-      padding: 0 20px;
-    }
-
-  }
-  &__message_list {
-    height: calc(100vh - 100px - 90px);
-    background-color: #fafafa;
-    padding-left: 40px;
-    .message_lists {
-      padding-top: 35px;
-      display: block;
-      display: flex;
-      .name {
-        color: #333333;
-        font-size: 16px;
-        margin-bottom: 12px;
-      }
-      .time {
-        color: #999999;
-        font-size: 12px;
-      }
-    }
-    .message {
-      color: #434A54;
-      font-size: 14px;
-      margin-bottom: 46px;
-    }
-  }
-  &__message_form {
-    height: 90px;
-    background-color: #d2d2d2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .new_message {
-      width: 100%;
-      margin: 0 40px;
-      display: flex;
-      justify-content: space-between;
-      .input-box {
-        width: 100%;
-        background-color: #ffffff;
+      align-items: center;
+      .top_items {
+        width: 260px;
+        height: 20px;
+        color: #ffffff ;
+        font-weight: bold;
+        margin: 0 20px;
         display: flex;
-        position: relative;
-        &__text {
-          height: 50px;
-          padding: 0 10px 0 10px;
+        justify-content: space-between;
+        &__name {
+          font-size: 16px;
         }
-        input {
-          border-style: none;
+        &__icon {
+          width: 60px;
+          text-align: right;
+            a {
+              color: #ffffff;
+              text-decoration: none;
+            }
         }
-        &__image {
-          position: absolute;
-          top: 10px;
-          right: 10px;
-          cursor: pointer;
-          font-size: 1.3rem;
+      }
+    }
+    .GroupList {
+      height: calc(100vh - 100px);
+      background-color: #2f3e51;
+      padding: 0 20px;
+      .Group {
+        box-sizing: border-box;
+        padding: 20px 0 40px;
+        &__name {
+          font-size: 15px;
+          margin-bottom: 5px;
+        }
+        &__message {
+        }
+        .groupBtn {
+          color: #ffffff;
+          font-size: 11px;
 
-          &__file {
-            display: none;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .Main_chat {
+    width: calc(100vw - 300px);
+    height: 100vh;
+    background-color: #ffffff;
+    float: right;
+    &__group_info {
+      border-bottom: #eeeeee;
+      padding: 0px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .top_group {
+        &__name {
+          color: #333333;
+          font-size: 20px;
+          padding: 35px 0 15px 0;
+        }
+        &__member {
+          color: #999999;
+          font-size: 12px;
+        }
+      }
+      .edit_btn {
+        display: block;
+        border: 1px solid #38aef0;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 20px;
+        color: #38aef0;
+        font-size: 16px;
+        text-decoration: none;
+      }
+    }
+    &__message_list {
+      height: calc(100vh - 100px - 90px);
+      background-color: #fafafa;
+      padding: 20px 40px;
+      box-sizing: border-box;
+      .MessageBox {
+        margin-bottom: 35px;
+        .MessageInfo {
+          margin-bottom: 12px;
+          display: flex;
+          &__userName {
+            font-size: 16px;
+            margin-right: 20px;
+          }
+          &__date {
+            color: #999999;
+            font-size: 12px;
           }
         }
+        p.Message__content {
+          color: #434A54;
+          font-size: 14px;
+        }
       }
-      .submit-btn {
-        color: #ffffff;
-        background-color: #38aef0;
-        border-style: none;
-        padding: 17px 30px;
-        margin-left: 15px;
-      }
-    }    
+    }
+    .Footer {
+      height: 90px;
+      background-color: #d2d2d2;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .Form {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        .Form__contents {
+          width: 100%;
+          background-color: #ffffff;
+          display: flex;
+          position: relative;
+          &__text {
+            height: 50px;
+            padding: 0 10px 0 10px;
+          }
+          input {
+            width: 100%;
+            border-style: none;
+            padding: 0 10px;
+          }
+          .Form__inputImage {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 1.3rem;
+            .file {
+              display: none;
+            }
+          }
+        }
+        .submit-btn {
+          color: #ffffff;
+          background-color: #38aef0;
+          border-style: none;
+          padding: 17px 30px;
+          margin-left: 15px;
+        }
+      }    
+    }
   }
 }
